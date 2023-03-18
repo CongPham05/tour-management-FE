@@ -30,7 +30,7 @@ const Login = () => {
             const res = await fetch(BASE_URL + `auth/login`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'content-type': 'application/json',
                 },
                 credentials: "include",//cho phep gui cookie ( mac định cookie se ko dc gui đi)
                 body: JSON.stringify(credentials)
@@ -38,6 +38,8 @@ const Login = () => {
 
             const result = await res.json();
             if (!res.ok) alert(result.message)
+
+            console.log(result.data)
 
             dispatch({ type: 'LOGIN_SUCCESS', payload: result.data })
             navigate('/')
