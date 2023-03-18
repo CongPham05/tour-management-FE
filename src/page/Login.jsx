@@ -32,7 +32,7 @@ const Login = () => {
                 headers: {
                     'content-type': 'application/json',
                 },
-                credentials: "include",//cho phep gui cookie ( mac định cookie se ko dc gui đi)
+                credentials: 'include',//cho phep gui cookie ( mac định cookie se ko dc gui đi)
                 body: JSON.stringify(credentials)
             })
 
