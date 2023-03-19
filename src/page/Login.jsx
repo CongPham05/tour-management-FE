@@ -32,15 +32,13 @@ const Login = () => {
                 headers: {
                     'content-type': 'application/json',
                 },
-                credentials: 'include',//cho phep gui cookie ( mac định cookie se ko dc gui đi)
+                //   credentials: 'include',//cho phep gui cookie ( mac định cookie se ko dc gui đi)
+                credentials: 'same-origin',
                 body: JSON.stringify(credentials)
             })
 
             const result = await res.json();
             if (!res.ok) alert(result.message)
-
-            console.log(result.data)
-
             dispatch({ type: 'LOGIN_SUCCESS', payload: result.data })
             navigate('/')
 
